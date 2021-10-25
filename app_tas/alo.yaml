@@ -1,0 +1,7 @@
+apiVersion: apm.cloudruntime.vmware.com/v1alpha1
+kind: Alo
+metadata:
+  name: bookinfo-alo
+spec:
+  gns: crbookinfo
+  cloudruntimeIdentifier: cr-test-2
