@@ -3,5 +3,66 @@ kind: Alo
 metadata:
   name: bookinfo-alo
 spec:
-  gns: crbookinfo
-  cloudruntimeIdentifier: cr-test-2
+  gns: crdemo
+  cloudruntimeIdentifier: cr-demo-1
+  tlos:
+  - ratings-tlo
+  clo: bookinfo-clo
+  elos:
+  - ratings-tas-elo
+  remediations:
+#    awsAsg:
+#      elo: ratings-vm-elo
+#      metricName: cloudRuntime-demo-ASG-custom-metric1
+#      awsAccessKeyId: ASIARRL6APZJH4HLNQAK
+#      awsAccessSecret: dilytvfS7NQ2hj+eKyQTSJJCr3hmZneC9LBw1Y/5
+#      awsSessionToken: IQoJb3JpZ2luX2VjEEYaCXVzLWVhc3QtMSJHMEUCIQCP2h7NhEh+LnuXttIq6Sb/uyeYHpMHtWV4199bjbYXVgIgN9djfZ2SuvnQoTjpzqVawWU3DxM2Cmw2mTxB/5xBjwIqqQIIz///////////ARAAGgwxMDYwMjc4NDMxNTQiDGtftiwFN6k5why15yr9AYlFlt5MJCQT2FGLovWshZCFt6OgPJxNKa7pnOKDS1+PwkUhruwi/fNjaOKdOWm4Dw+jzLdGGc1r7cXbrz8Mkrh7vSdinGPDKp7msASpXihcX+JTEPXAu/VRL4yWqcNaBymO321zRvPTW3SoQgPPVZoZs7dgqE9Qzw8gSoERi7w9yL9QW5fzAzutNyfNbJcDqNrYI6D4r5x7iz9uWGPjCYlyNTEg5QiZ3GwWYKI4r90aEe4cTz7A/OruARBzU/FiZRc/ww9Z/TmQTmR1KMWvJSQ71oTOCmFdK918LPsCE3tsqW/xps6WxmaVzERXfLERGQGOOdJkKjpaCij5GgMw4Na+iwY6nQE/s+jR8A8Su5yAfiT88lwBNpIHMJzNOTW+e9w3tXuWP4yFzzwjfvAaGtavdEnnhUZIPRJ8U1NjEI3aPLw4CZt3aKMCJvG895YJzUBdPg7vryF76SYi6uxJoNYMhP1beQNEhnp885v5q58WiQbtIIcSqndwXw2h6aqFTXu2MAwLphd0HDxOyKR4SeApVMDoej1SaL0FWJ47NdqfpI6k
+    tas:
+      - elo: tas-elo
+        maxInstances: 4
+        minInstances: 1
+        serviceName: bookinfo-ratings
+        metricName: cr-ratings-tas-metric
+---
+apiVersion: apm.cloudruntime.vmware.com/v1alpha1
+kind: Tlo
+metadata:
+  name: ratings-tlo
+spec:
+  gns: crdemo
+  cloudruntimeIdentifier: cr-demo-1
+  tlis:
+  - name: P50LATENCY
+    value: 1500
+  - name: P90LATENCY
+    value: 1750
+  transactionType: reviews_tas
+  operationName: reviews_tas
+---
+apiVersion: apm.cloudruntime.vmware.com/v1alpha1
+kind: ExternalLo
+metadata:
+  name: ratings-tas-elo
+spec:
+  gns: crdemo
+  cloudruntimeIdentifier: cr-demo-1
+  type: TAS
+  elis:
+  - name: P50LATENCY
+    value: 495
+  - name: P90LATENCY
+    value: 550
+  spanName: ratings_tas
+---
+apiVersion: apm.cloudruntime.vmware.com/v1alpha1
+kind: Clo
+metadata:
+  name: bookinfo-clo
+spec:
+  gns: crdemo
+  cloudruntimeIdentifier: cr-demo-1
+  clis:
+  - name: CPUUTILIZATION
+    value: 95
+  - name: MEMORYUTILIZATION
+    value: 95
