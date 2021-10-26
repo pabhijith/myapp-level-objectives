@@ -58,6 +58,7 @@ metadata:
   name: bookinfo-clo
 spec:
   gns: crdemo
+  aloName: bookinfo-alo
   clis:
   - name: CPUUTILIZATION
     value: 95
