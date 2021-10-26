@@ -30,7 +30,6 @@ metadata:
   name: ratings-tlo
 spec:
   gns: crdemo
-  cloudruntimeIdentifier: cr-demo-1
   tlis:
   - name: P50LATENCY
     value: 1500
@@ -45,7 +44,6 @@ metadata:
   name: ratings-tas-elo
 spec:
   gns: crdemo
-  cloudruntimeIdentifier: cr-demo-1
   type: TAS
   elis:
   - name: P50LATENCY
@@ -60,7 +58,6 @@ metadata:
   name: bookinfo-clo
 spec:
   gns: crdemo
-  cloudruntimeIdentifier: cr-demo-1
   clis:
   - name: CPUUTILIZATION
     value: 95
