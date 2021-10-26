@@ -6,7 +6,7 @@ spec:
   gns: crdemo
   cloudruntimeIdentifier: cr-demo-1
   tlos:
-  - ratings-tlo
+  - reviews-tlo
   clo: bookinfo-clo
   elos:
   - ratings-tas-elo
@@ -27,7 +27,7 @@ spec:
 apiVersion: apm.cloudruntime.vmware.com/v1alpha1
 kind: Tlo
 metadata:
-  name: ratings-tlo
+  name: reviews-tlo
 spec:
   aloName: bookinfo-alo
   tlis:
