@@ -22,7 +22,7 @@ spec:
         maxInstances: 4
         minInstances: 1
         serviceName: bookinfo-ratings
-        metricName: cr-ratings-tas-metric
+        metricName: cr_ratings_tas_metric
 ---
 apiVersion: apm.cloudruntime.vmware.com/v1alpha1
 kind: Tlo
