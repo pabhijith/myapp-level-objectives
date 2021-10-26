@@ -29,7 +29,6 @@ kind: Tlo
 metadata:
   name: ratings-tlo
 spec:
-  gns: crdemo
   tlis:
   - name: P50LATENCY
     value: 1500
@@ -37,13 +36,13 @@ spec:
     value: 1750
   transactionType: reviews_tas
   operationName: reviews_tas
+  serviceName: reviews
 ---
 apiVersion: apm.cloudruntime.vmware.com/v1alpha1
 kind: ExternalLo
 metadata:
   name: ratings-tas-elo
 spec:
-  gns: crdemo
   type: TAS
   elis:
   - name: P50LATENCY
