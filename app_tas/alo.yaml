@@ -29,6 +29,7 @@ kind: Tlo
 metadata:
   name: ratings-tlo
 spec:
+  aloName: bookinfo-alo
   tlis:
   - name: P50LATENCY
     value: 1500
@@ -49,6 +50,7 @@ spec:
     value: 495
   - name: P90LATENCY
     value: 550
+  targetValue: 90
   spanName: ratings_tas
 ---
 apiVersion: apm.cloudruntime.vmware.com/v1alpha1
