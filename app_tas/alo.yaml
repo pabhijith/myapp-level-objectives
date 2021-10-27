@@ -47,9 +47,9 @@ spec:
   type: TAS
   elis:
   - name: P50LATENCY
-    value: 495
+    value: 200
   - name: P90LATENCY
-    value: 550
+    value: 250
   spanName: ratings_tas
 ---
 apiVersion: apm.cloudruntime.vmware.com/v1alpha1
